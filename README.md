@@ -4,7 +4,7 @@ Util::CommandLine - Command-line interface helper utility
 
 # VERSION
 
-version 1.01
+version 1.02
 
 [![Build Status](https://travis-ci.org/gryphonshafer/Util-CommandLine.svg)](https://travis-ci.org/gryphonshafer/Util-CommandLine)
 [![Coverage Status](https://coveralls.io/repos/gryphonshafer/Util-CommandLine/badge.png)](https://coveralls.io/r/gryphonshafer/Util-CommandLine)
@@ -18,9 +18,8 @@ version 1.01
 
 # DESCRIPTION
 
-This module conducts some automatic enviornment setup to enable command-line
-scripts that need access to the library set and either indirect (through
-the model layer) or direct database access.
+This library is command-line interface helper utility. It unifies some useful
+sub-utilities for command-line programs.
 
 # EXAMPLES
 

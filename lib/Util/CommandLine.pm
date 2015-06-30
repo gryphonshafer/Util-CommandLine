@@ -73,9 +73,8 @@ __END__
 
 =head1 DESCRIPTION
 
-This module conducts some automatic enviornment setup to enable command-line
-scripts that need access to the library set and either indirect (through
-the model layer) or direct database access.
+This library is command-line interface helper utility. It unifies some useful
+sub-utilities for command-line programs.
 
 =head1 EXAMPLES
 
