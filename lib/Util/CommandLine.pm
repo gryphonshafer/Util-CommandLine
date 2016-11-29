@@ -29,10 +29,24 @@ sub import {
     }
 
     if ( grep { $_ eq 'singleton' } @_ ) {
-        if ( Proc::PID::File->running ) {
-            warn "Running as singleton; forcing exit of $0\n";
-            exit 1;
-        }
+        my @dirs = (
+            '/var/run',
+            '/tmp',
+            $ENV{HOME},
+            '.',
+            '/',
+        );
+
+        my $singleton;
+        eval {
+            if ( Proc::PID::File->running({ dir => shift @dirs }) ) {
+                warn "Running as singleton; forcing exit of $0\n";
+                exit 1;
+            }
+            $singleton = 1;
+        } while ( not $singleton and @dirs );
+
+        die "Unable to establish PID file for singleton functionality\n" unless ($singleton);
     }
 
     options() if ( grep { $_ eq 'podhelp' } @_ );
