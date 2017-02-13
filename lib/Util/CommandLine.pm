@@ -1,6 +1,7 @@
 package Util::CommandLine;
 # ABSTRACT: Command-line interface helper utility
 
+use 5.008;
 use strict;
 use warnings;
 
