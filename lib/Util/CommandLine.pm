@@ -8,10 +8,11 @@ use warnings;
 use Getopt::Long 'GetOptions';
 use Pod::Usage 'pod2usage';
 use Proc::PID::File;
+use Term::ReadKey 'ReadMode';
 
 # VERSION
 
-use constant EXPORT_OK => [ qw( options pod2usage singleton ) ];
+use constant EXPORT_OK => [ qw( options pod2usage singleton readmode ) ];
 
 sub import {
     my $self = shift;
@@ -29,28 +30,31 @@ sub import {
         *{"$callpkg\::$_"} = \&{"$self\::$_"} for ( keys %exports );
     }
 
-    if ( grep { $_ eq 'singleton' } @_ ) {
-        my @dirs = (
-            '/var/run',
-            '/tmp',
-            $ENV{HOME},
-            '.',
-            '/',
-        );
+    singleton() if ( grep { $_ eq 'singleton' } @_ );
+    options()   if ( grep { $_ eq 'podhelp'   } @_ );
 
-        my $singleton;
-        eval {
-            if ( Proc::PID::File->running({ dir => shift @dirs }) ) {
-                warn "Running as singleton; forcing exit of $0\n";
-                exit 1;
-            }
-            $singleton = 1;
-        } while ( not $singleton and @dirs );
+    return;
+}
 
-        die "Unable to establish PID file for singleton functionality\n" unless ($singleton);
-    }
+sub singleton {
+    my @dirs = (
+        '/var/run',
+        '/tmp',
+        $ENV{HOME},
+        '.',
+        '/',
+    );
 
-    options() if ( grep { $_ eq 'podhelp' } @_ );
+    my $singleton;
+    eval {
+        if ( Proc::PID::File->running({ dir => shift @dirs }) ) {
+            warn "Running as singleton; forcing exit of $0\n";
+            exit 1;
+        }
+        $singleton = 1;
+    } while ( not $singleton and @dirs );
+
+    die "Unable to establish PID file for singleton functionality\n" unless ($singleton);
 
     return;
 }
@@ -67,6 +71,10 @@ sub options {
     return $settings;
 }
 
+sub readmode {
+    return ReadMode(@_);
+}
+
 1;
 __END__
 =pod
@@ -81,10 +89,19 @@ __END__
 
 =head1 SYNOPSIS
 
-    use Util::CommandLine qw( options pod2usage );
+    # example 1
+    use Util::CommandLine qw( options pod2usage readmode );
 
     my $settings = options( qw( text=s alttext=s flag1 flag2 ) );
     pod2usage( '-exitstatus' => 1, '-verbose' => 1 ) if ( $settings->{'help'} );
+
+    print 'Enter password: ';
+    readmode 'noecho';
+    my $password = <STDIN>;
+    readmode 'restore';
+
+    # example 2
+    use Util::CommandLine qw( podhelp singleton );
 
 =head1 DESCRIPTION
 
@@ -130,9 +147,14 @@ On startup, this will use L<Proc::PID::File> to check for any other instances of
 the program running. If they are running, the program will die with an
 appropriate error.
 
+=head2 readmode
+
+This is the same function as L<Term::ReadKey>'s C<ReadMode>.
+
 =head1 DEPENDENCIES
 
-This module has the following dependencies: L<Getopt::Long>, L<Pod::Usage>, L<Proc::PID::File>.
+This module has the following dependencies:
+L<Getopt::Long>, L<Pod::Usage>, L<Proc::PID::File>, L<Term::ReadKey>.
 
 =head1 SEE ALSO
 

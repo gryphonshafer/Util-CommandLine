@@ -1,6 +1,7 @@
 Revision history for Util::CommandLine
 
 {{$NEXT}}
+        - Add Term::ReadKey's ReadMode; setup singelton as a function
         - Adding Perl versions to test; annual general update for 2018
 
 1.03      2016-11-28 21:48:29-08:00 America/Los_Angeles

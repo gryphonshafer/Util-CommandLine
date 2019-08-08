@@ -11,10 +11,19 @@ version 1.04
 
 # SYNOPSIS
 
-    use Util::CommandLine qw( options pod2usage );
+    # example 1
+    use Util::CommandLine qw( options pod2usage readmode );
 
     my $settings = options( qw( text=s alttext=s flag1 flag2 ) );
     pod2usage( '-exitstatus' => 1, '-verbose' => 1 ) if ( $settings->{'help'} );
+
+    print 'Enter password: ';
+    readmode 'noecho';
+    my $password = <STDIN>;
+    readmode 'restore';
+
+    # example 2
+    use Util::CommandLine qw( podhelp singleton );
 
 # DESCRIPTION
 
@@ -60,9 +69,14 @@ On startup, this will use [Proc::PID::File](https://metacpan.org/pod/Proc::PID::
 the program running. If they are running, the program will die with an
 appropriate error.
 
+## readmode
+
+This is the same function as [Term::ReadKey](https://metacpan.org/pod/Term::ReadKey)'s `ReadMode`.
+
 # DEPENDENCIES
 
-This module has the following dependencies: [Getopt::Long](https://metacpan.org/pod/Getopt::Long), [Pod::Usage](https://metacpan.org/pod/Pod::Usage), [Proc::PID::File](https://metacpan.org/pod/Proc::PID::File).
+This module has the following dependencies:
+[Getopt::Long](https://metacpan.org/pod/Getopt::Long), [Pod::Usage](https://metacpan.org/pod/Pod::Usage), [Proc::PID::File](https://metacpan.org/pod/Proc::PID::File), [Term::ReadKey](https://metacpan.org/pod/Term::ReadKey).
 
 # SEE ALSO
 
@@ -83,7 +97,7 @@ Gryphon Shafer <gryphon@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2018 by Gryphon Shafer.
+This software is copyright (c) 2019 by Gryphon Shafer.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
