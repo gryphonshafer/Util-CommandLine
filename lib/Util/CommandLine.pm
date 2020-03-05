@@ -162,9 +162,7 @@ You can look for additional information at:
 
 =for :list
 * L<GitHub|https://github.com/gryphonshafer/Util-CommandLine>
-* L<CPAN|http://search.cpan.org/dist/Util-CommandLine>
 * L<MetaCPAN|https://metacpan.org/pod/Util::CommandLine>
-* L<AnnoCPAN|http://annocpan.org/dist/Util-CommandLine>
 * L<Travis CI|https://travis-ci.org/gryphonshafer/Util-CommandLine>
 * L<Coveralls|https://coveralls.io/r/gryphonshafer/Util-CommandLine>
 * L<CPANTS|http://cpants.cpanauthors.org/dist/Util-CommandLine>
