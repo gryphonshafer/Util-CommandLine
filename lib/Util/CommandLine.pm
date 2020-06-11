@@ -63,7 +63,32 @@ sub options {
     shift if ( index( ( $_[0] || '' ), '::' ) != -1 );
 
     my $settings = {};
-    GetOptions( $settings, @_, qw( help man ) ) || pod2usage(0);
+    GetOptions(
+        map {
+            if (/\{/) {
+                $settings->{ ( split(/[|=]/) )[0] } = [];
+                $_ => $settings->{ ( split(/[|=]/) )[0] };
+            }
+            else {
+                $_ => \$settings->{ ( split(/[|=]/) )[0] };
+            }
+        } map { split(/\s+/) } @_, qw( help man )
+    ) || pod2usage(0);
+
+    for ( keys %$settings ) {
+        delete $settings->{$_} if (
+            not defined $settings->{$_} or
+            (
+                ref $settings->{$_} eq 'ARRAY' and (
+                    not @{ $settings->{$_} } or
+                    (
+                        @{ $settings->{$_} } == 1 and
+                        $settings->{$_}[0] eq ''
+                    )
+                )
+            )
+        );
+    }
 
     pod2usage( '-exitstatus' => 1, '-verbose' => 1 ) if ( $settings->{'help'} );
     pod2usage( '-exitstatus' => 0, '-verbose' => 2 ) if ( $settings->{'man'}  );
@@ -102,6 +127,9 @@ __END__
 
     # example 2
     use Util::CommandLine qw( podhelp singleton );
+
+    # example 3
+    my $opt = options('set|s=s{0,3} extra|e=s');
 
 =head1 DESCRIPTION
 
