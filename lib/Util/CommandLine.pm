@@ -107,8 +107,8 @@ __END__
 =begin :badges
 
 =for markdown
-[![Build Status](https://travis-ci.org/gryphonshafer/Util-CommandLine.svg)](https://travis-ci.org/gryphonshafer/Util-CommandLine)
-[![Coverage Status](https://coveralls.io/repos/gryphonshafer/Util-CommandLine/badge.png)](https://coveralls.io/r/gryphonshafer/Util-CommandLine)
+[![build](https://github.com/gryphonshafer/Util-CommandLine/workflows/build/badge.svg)](https://github.com/gryphonshafer/Util-CommandLine/actions?query=workflow%3Abuild)
+[![codecov](https://codecov.io/gh/gryphonshafer/Util-CommandLine/graph/badge.svg)](https://codecov.io/gh/gryphonshafer/Util-CommandLine)
 
 =end :badges
 
@@ -191,8 +191,8 @@ You can look for additional information at:
 =for :list
 * L<GitHub|https://github.com/gryphonshafer/Util-CommandLine>
 * L<MetaCPAN|https://metacpan.org/pod/Util::CommandLine>
-* L<Travis CI|https://travis-ci.org/gryphonshafer/Util-CommandLine>
-* L<Coveralls|https://coveralls.io/r/gryphonshafer/Util-CommandLine>
+* L<GitHub Actions|https://github.com/gryphonshafer/Util-CommandLine/actions>
+* L<Codecov|https://codecov.io/gh/gryphonshafer/Util-CommandLine>
 * L<CPANTS|http://cpants.cpanauthors.org/dist/Util-CommandLine>
 * L<CPAN Testers|http://www.cpantesters.org/distro/U/Util-CommandLine.html>
 
