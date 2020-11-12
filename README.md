@@ -4,10 +4,10 @@ Util::CommandLine - Command-line interface helper utility
 
 # VERSION
 
-version 1.05
+version 1.06
 
-[![Build Status](https://travis-ci.org/gryphonshafer/Util-CommandLine.svg)](https://travis-ci.org/gryphonshafer/Util-CommandLine)
-[![Coverage Status](https://coveralls.io/repos/gryphonshafer/Util-CommandLine/badge.png)](https://coveralls.io/r/gryphonshafer/Util-CommandLine)
+[![build](https://github.com/gryphonshafer/Util-CommandLine/workflows/build/badge.svg)](https://github.com/gryphonshafer/Util-CommandLine/actions?query=workflow%3Abuild)
+[![codecov](https://codecov.io/gh/gryphonshafer/Util-CommandLine/graph/badge.svg)](https://codecov.io/gh/gryphonshafer/Util-CommandLine)
 
 # SYNOPSIS
 
@@ -87,8 +87,8 @@ You can look for additional information at:
 
 - [GitHub](https://github.com/gryphonshafer/Util-CommandLine)
 - [MetaCPAN](https://metacpan.org/pod/Util::CommandLine)
-- [Travis CI](https://travis-ci.org/gryphonshafer/Util-CommandLine)
-- [Coveralls](https://coveralls.io/r/gryphonshafer/Util-CommandLine)
+- [GitHub Actions](https://github.com/gryphonshafer/Util-CommandLine/actions)
+- [Codecov](https://codecov.io/gh/gryphonshafer/Util-CommandLine)
 - [CPANTS](http://cpants.cpanauthors.org/dist/Util-CommandLine)
 - [CPAN Testers](http://www.cpantesters.org/distro/U/Util-CommandLine.html)
 
@@ -98,7 +98,7 @@ Gryphon Shafer <gryphon@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2020 by Gryphon Shafer.
+This software is copyright (c) 2021 by Gryphon Shafer.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
