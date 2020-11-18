@@ -107,7 +107,7 @@ __END__
 =begin :badges
 
 =for markdown
-[![build](https://github.com/gryphonshafer/Util-CommandLine/workflows/build/badge.svg)](https://github.com/gryphonshafer/Util-CommandLine/actions?query=workflow%3Abuild)
+[![test](https://github.com/gryphonshafer/Util-CommandLine/workflows/test/badge.svg)](https://github.com/gryphonshafer/Util-CommandLine/actions?query=workflow%3Atest)
 [![codecov](https://codecov.io/gh/gryphonshafer/Util-CommandLine/graph/badge.svg)](https://codecov.io/gh/gryphonshafer/Util-CommandLine)
 
 =end :badges
