@@ -1,6 +1,7 @@
 Revision history for Util::CommandLine
 
 {{$NEXT}}
+        - Minor documentation update
 
 1.06      2021-01-10 14:22:54-08:00 America/Los_Angeles
         - Migrate to Test2::V0

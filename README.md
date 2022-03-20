@@ -4,7 +4,7 @@ Util::CommandLine - Command-line interface helper utility
 
 # VERSION
 
-version 1.06
+version 1.07
 
 [![test](https://github.com/gryphonshafer/Util-CommandLine/workflows/test/badge.svg)](https://github.com/gryphonshafer/Util-CommandLine/actions?query=workflow%3Atest)
 [![codecov](https://codecov.io/gh/gryphonshafer/Util-CommandLine/graph/badge.svg)](https://codecov.io/gh/gryphonshafer/Util-CommandLine)
@@ -98,7 +98,7 @@ Gryphon Shafer <gryphon@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2015-2021 by Gryphon Shafer.
+This software is Copyright (c) 2015-2050 by Gryphon Shafer.
 
 This is free software, licensed under:
 
