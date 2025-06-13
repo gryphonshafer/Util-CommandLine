@@ -4,7 +4,7 @@ Util::CommandLine - Command-line interface helper utility
 
 # VERSION
 
-version 1.08
+version 1.09
 
 [![test](https://github.com/gryphonshafer/Util-CommandLine/workflows/test/badge.svg)](https://github.com/gryphonshafer/Util-CommandLine/actions?query=workflow%3Atest)
 [![codecov](https://codecov.io/gh/gryphonshafer/Util-CommandLine/graph/badge.svg)](https://codecov.io/gh/gryphonshafer/Util-CommandLine)
